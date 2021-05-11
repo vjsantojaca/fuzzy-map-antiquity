@@ -9,3 +9,4 @@ build
 packrat/lib*
 packrat/src
 renv/library
+packrat/lib*/
