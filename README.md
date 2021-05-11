@@ -27,7 +27,9 @@ test - Runs test for an R package
 ```
 
 ## Some dependencies
-
+- [gcc-fortrand](https://gcc.gnu.org/fortran/index.html)
+- [libudunits2](https://www.unidata.ucar.edu/software/udunits/udunits-2.0.4/)
+- [gdal-config](https://gdal.org/programs/gdal-config.html)
 
 ## Installation
 
