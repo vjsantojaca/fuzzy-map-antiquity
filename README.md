@@ -4,6 +4,7 @@
 INSPIRE is an EU initiative to establish an infrastructure for spatial information in Europe that is geared to help to make spatial or geographical information more accessible and interoperable for a wide range of purposes supporting sustainable development.
 
 Spanish cadastre INSPIRE page -> http://www.catastro.meh.es/webinspire/index.html
+Bizkaia cadastre INSPIRE page -> https://web.bizkaia.eus/es/inspirebizkaia
 
 ## Gradle Plugin (https://github.com/umayrh/gradle-plugin-r)
 ```
