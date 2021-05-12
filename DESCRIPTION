@@ -1,6 +1,6 @@
 Package: fuzzymapbuildings
 Title: Crazy map of the age of the buildings
-Version: 0.1
+Version: 0.1.2
 Authors@R: 
     person(given = "Víctor",
            family = "Santoja",
