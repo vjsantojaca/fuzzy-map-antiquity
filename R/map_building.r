@@ -104,6 +104,7 @@ create_spanish_cad_building_age <- function(city) {
             legend.outside = TRUE,
             legend.text.color = "white",
             legend.text.fontfamily = "Montserrat", 
+            legend.text.size = 1,
             panel.label.fontfamily = "Montserrat",
             panel.label.color = "white",
             panel.label.bg.color = "black",
@@ -115,10 +116,9 @@ create_spanish_cad_building_age <- function(city) {
     tmap_save(final_map, 
             filename = paste(city, "_evolution_urban.png", sep=""),
             scale = 1, 
-            width = 36, 
-            height = 24, 
-            units = "in",
-            dpi = 500)
+            width = 2560,
+            units = "px",
+            dpi = 300)
     
     print("All done")
 
