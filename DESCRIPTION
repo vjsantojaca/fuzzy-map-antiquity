@@ -10,6 +10,18 @@ Description: Map of the age of the buildings
 URL: https://github.com/vjsantojaca/fuzzy-map-buildings
 BugReports:https://github.com/vjsantojaca/fuzzy-map-buildings/issues
 License: GPL-3
+Depends: R (>= 3.0.0)
+Imports:
+    tidyverse,
+    feedeR,
+    sf,
+    lubridate,
+    fs,
+    tmap,
+    classInt,
+    showtext,
+    sysfonts,
+    rvest
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
