@@ -10,5 +10,5 @@ create_spanish_cad_building_age(city)
 Using the information of cadastre, generate map with the building age information
 }
 \examples{
-create_spanish_cad_building_age(String city)
+create_spanish_cad_building_age("Salamanca")
 }

@@ -3,7 +3,7 @@
 
 #' @export
 #' @import tidyverse feedeR sf lubridate fs tmap classInt showtext sysfonts rvest
-#' @examples create_spanish_cad_building_age(String city)
+#' @examples create_spanish_cad_building_age("Salamanca")
 
 create_spanish_cad_building_age <- function(city) {
     
