@@ -32,7 +32,6 @@ test - Runs test for an R package
 - [gdal-config](https://gdal.org/programs/gdal-config.html)
 
 ## Installation
-
 You can install the released version of fuzzymapbuildings from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
@@ -44,12 +43,20 @@ devtools::install_github("vjsantojaca/fuzzy-map-buildings")
 ```
 
 ## Example
-
 ``` r
 library(fuzzymapbuildings)
 
 create_spanish_cad_building_age("Salamanca")
 ```
+
+## Result
+
+![Salamanca](misc/Salamanca_evolution_urban.png "Salamanca")
+
+## Collaborate
+You could download this code, modify it and share with the family 🤌🤌
+If you see that any part of the code could be improved (you are surely right), please open a new ticket in this repo or upload a new Pull Request 🤓🤓  
+I would appreciate it infinitely.
 
 ## Bibliography
 - https://dominicroye.github.io/en/2019/visualize-urban-growth/
