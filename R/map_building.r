@@ -141,7 +141,7 @@ create_bizkaia_cad_building_age <- function(city) {
     library(tmap)
     library(rvest)
 
-    url <- "http://arcgis.bizkaia.eus:8080/inspire/cadastralparcels.xml"
+    url <- "http://arcgis.bizkaia.eus:8080/inspire/buildings.xml"
 
     enlaces <- feed.extract(url)
     str(enlaces)
@@ -158,7 +158,7 @@ create_bizkaia_cad_building_age <- function(city) {
     unzip(temp, exdir = "buildings")
 
     # get the path with the file
-    file_buildings <- dir_ls("buildings", regexp = "ES.BFA.CP.gml")
+    file_buildings <- dir_ls("buildings", regexp = "ES.BFA.BU.gml")
 
     # import the data
     buildings <- mutate(st_read(file_buildings), 
@@ -169,33 +169,31 @@ create_bizkaia_cad_building_age <- function(city) {
     #font download
     sysfonts::font_add_google("Montserrat", "Montserrat")
 
-    #use showtext for fonts
+    #use showtext for fon
     showtext::showtext_auto()
 
-    filter(buildings, beginLifespanVersion >= "1750-01-01")
+    filter(buildings, end >= "1750-01-01")
 
     # get the coordinates of the city
     ciudad_point <- tmaptools::geocode_OSM(city, as.sf = TRUE)
 
     #  project the points
-    ciudad_point <- st_transform(ciudad_point, 25830)
+    ciudad_point <- st_transform(ciudad_point, st_crs(buildings))
 
     # create the buffer
-    point_bf <- st_buffer(ciudad_point, 2500)
-    
-    print(buildings)
-    print(point_bf)
+    point_bf <- st_buffer(ciudad_point, 3000)
+
     # get the intersection between the buffer and the building
     buildings_25 <- st_intersection(buildings, point_bf)
 
     # find 15 classes
-    br <- classIntervals(year(buildings_25$beginLifespanVersion), 15, "quantile")
+    br <- classIntervals(year(buildings_25$end), 15, "quantile")
 
     # create labels
     lab <- names(print(br, under = "<", over = ">", cutlabels = FALSE))
 
     # categorize the year
-    buildings_25 <- mutate(buildings_25, yr_cl = cut(year(beginLifespanVersion), br$brks, labels = lab, include.lowest = TRUE))
+    buildings_25 <- mutate(buildings_25, yr_cl = cut(year(end), br$brks, labels = lab, include.lowest = TRUE))
 
     # colours
     col_spec <- RColorBrewer::brewer.pal(11, "Spectral")
@@ -216,7 +214,7 @@ create_bizkaia_cad_building_age <- function(city) {
             legend.outside = TRUE,
             legend.text.color = "white",
             legend.text.fontfamily = "Montserrat", 
-            legend.text.size = 1,
+            legend.text.size = 1.5,
             panel.label.fontfamily = "Montserrat",
             panel.label.color = "white",
             panel.label.bg.color = "black",
