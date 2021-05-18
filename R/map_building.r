@@ -104,7 +104,7 @@ create_spanish_cad_building_age <- function(city) {
             legend.outside = TRUE,
             legend.text.color = "white",
             legend.text.fontfamily = "Montserrat", 
-            legend.text.size = 1,
+            legend.text.size = 1.7,
             panel.label.fontfamily = "Montserrat",
             panel.label.color = "white",
             panel.label.bg.color = "black",
